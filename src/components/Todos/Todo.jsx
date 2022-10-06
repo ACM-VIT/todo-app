@@ -1,5 +1,4 @@
 import * as React from "react";
-import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -12,9 +11,8 @@ import { useContext } from "react";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
 
 export default function Todo({ todo }) {
-  const { add, del } = useContext(TodoContext);
+  const { del } = useContext(TodoContext);
   const [checked, setChecked] = React.useState([0]);
-
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -32,7 +30,11 @@ export default function Todo({ todo }) {
   return (
     <ListItem
       secondaryAction={
-        <IconButton onClick={del} edge="end" aria-label="comments">
+        <IconButton
+          onClick={del.bind(null, todo.id)}
+          edge="end"
+          aria-label="comments"
+        >
           <DeleteIcon />
         </IconButton>
       }

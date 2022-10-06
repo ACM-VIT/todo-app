@@ -10,8 +10,9 @@ export const TodoReducer = (state, action) => {
     case ACTIONS.DELETE:
       return {
         ...state,
+        // eslint-disable-next-line array-callback-return
         todos: state.todos.filter((todo) => {
-          if (todo.id !== action.payload.id) {
+          if (todo.id !== action.payload) {
             return todo;
           }
         }),

@@ -1,7 +1,7 @@
 import React from "react";
-import { Paper, Typography, TextField, Button } from "@mui/material";
+import { Typography, TextField, Button } from "@mui/material";
 import SelectTextFields from "./Category";
-import { useContext, useState, useRef } from "react";
+import { useContext, useState } from "react";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
 
 function TodoForm(props) {
@@ -11,11 +11,6 @@ function TodoForm(props) {
   const handleChange = (event) => {
     setText(event.target.value);
   };
-
-  // const formValidation = (text, category) => {
-  //   if (text ==)
-  // }
-
   const handleSubmit = (event) => {
     const newTodo = {
       id: Math.floor(Math.random() * 100000000),
@@ -23,7 +18,6 @@ function TodoForm(props) {
       category: category,
     };
     add(newTodo);
-    console.log(category);
   };
   return (
     <div>
