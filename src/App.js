@@ -1,13 +1,14 @@
 import Navbar from "./components/Navbar/Navbar";
-import { TodoProvider } from "./context/TodoContext/TodoContext";
+import TodoForm from "./components/TodoForm/TodoForm";
+import Todos from "./components/Todos/Todos";
 import "./styles/App.css";
 
 function App() {
   return (
     <div className="App">
-      <TodoProvider>
-        <Navbar />
-      </TodoProvider>
+      <Navbar />
+      <TodoForm />
+      <Todos />
     </div>
   );
 }
