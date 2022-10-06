@@ -1,11 +1,13 @@
 import React from "react";
-import { Paper, Typography, TextField } from "@mui/material";
+import { Paper, Typography, TextField, Button } from "@mui/material";
 import SelectTextFields from "./Category";
 
 function TodoForm(props) {
   return (
     <div>
-      <Typography variant="h3" sx={{m:3}}>Add a Todo</Typography>
+      <Typography variant="h3" sx={{ m: 3 }}>
+        Add a Todo
+      </Typography>
       <form>
         <div
           style={{
@@ -24,6 +26,7 @@ function TodoForm(props) {
                 sx={{ width: "100%" }}
               />
               <SelectTextFields />
+              <Button variant="contained">Add</Button>
             </div>
           </div>
         </div>
