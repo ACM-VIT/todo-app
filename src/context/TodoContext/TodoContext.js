@@ -18,7 +18,7 @@ export const TodoProvider = ({ children }) => {
     dispatch({ type: ACTIONS.ADD, payload: todo });
   };
   const deleteTodo = (todo) => {
-    dispatch({ type: ACTIONS.DELETE, payload: todo });
+    dispatch({ type: ACTIONS.DELETE, payload: { todo, id: todo.id } });
     console.log("deleted");
   };
   return (

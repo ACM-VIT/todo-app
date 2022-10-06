@@ -10,7 +10,20 @@ function TodoForm(props) {
   const [category, setCategory] = useState("");
   const handleChange = (event) => {
     setText(event.target.value);
-    console.log(text);
+  };
+
+  // const formValidation = (text, category) => {
+  //   if (text ==)
+  // }
+
+  const handleSubmit = (event) => {
+    const newTodo = {
+      id: Math.floor(Math.random() * 100000000),
+      text: text,
+      category: category,
+    };
+    add(newTodo);
+    console.log(category);
   };
   return (
     <div>
@@ -35,7 +48,9 @@ function TodoForm(props) {
               sx={{ width: "100%" }}
             />
             <SelectTextFields category={category} setCategory={setCategory} />
-            <Button variant="contained">Add</Button>
+            <Button variant="contained" onClick={handleSubmit}>
+              Add
+            </Button>
           </div>
         </div>
       </div>

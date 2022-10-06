@@ -52,7 +52,6 @@ export default function SelectTextFields({ category, setCategory }) {
               key={option.value}
               onClick={() => {
                 setCategory(option.value);
-                console.log(category);
               }}
               value={option.value}
             >

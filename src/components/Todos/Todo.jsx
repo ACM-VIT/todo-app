@@ -49,7 +49,7 @@ export default function Todo({ todo }) {
           />
         </ListItemIcon>
         <ListItemText id={labelId} primary={`${todo.text}`} />
-        <ListItemText id={labelId} primary={`${todo.text}`} />
+        <ListItemText id={labelId} primary={`${todo.category}`} />
       </ListItemButton>
     </ListItem>
   );
