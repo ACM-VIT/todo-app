@@ -8,7 +8,11 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export default function Todo({ value }) {
+import { useContext } from "react";
+import { TodoContext } from "../../context/TodoContext/TodoContext";
+
+export default function Todo({ todo }) {
+  const { add, del } = useContext(TodoContext);
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value) => () => {
@@ -24,28 +28,28 @@ export default function Todo({ value }) {
     setChecked(newChecked);
   };
 
-  const labelId = `checkbox-list-label-${value}`;
+  const labelId = `checkbox-list-label-${todo.text}`;
   return (
     <ListItem
-      key={value}
       secondaryAction={
-        <IconButton edge="end" aria-label="comments">
+        <IconButton onClick={del} edge="end" aria-label="comments">
           <DeleteIcon />
         </IconButton>
       }
       disablePadding
     >
-      <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
+      <ListItemButton role={undefined} onClick={handleToggle(todo.text)} dense>
         <ListItemIcon>
           <Checkbox
             edge="start"
-            checked={checked.indexOf(value) !== -1}
+            checked={checked.indexOf(todo.text) !== -1}
             tabIndex={-1}
             disableRipple
             inputProps={{ "aria-labelledby": labelId }}
           />
         </ListItemIcon>
-        <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+        <ListItemText id={labelId} primary={`${todo.text}`} />
+        <ListItemText id={labelId} primary={`${todo.text}`} />
       </ListItemButton>
     </ListItem>
   );

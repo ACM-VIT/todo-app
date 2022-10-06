@@ -7,7 +7,7 @@ export const ACTIONS = {
 };
 
 const initialState = {
-  todos: [],
+  todos: [{ id: 1, text: "hello", category: "asd" }],
 };
 
 export const TodoContext = createContext(initialState);
@@ -19,13 +19,14 @@ export const TodoProvider = ({ children }) => {
   };
   const deleteTodo = (todo) => {
     dispatch({ type: ACTIONS.DELETE, payload: todo });
+    console.log("deleted");
   };
   return (
     <TodoContext.Provider
       value={{
         todos: state.todos,
         add: addTodo,
-        delete: deleteTodo,
+        del: deleteTodo,
       }}
     >
       {children}

@@ -22,8 +22,8 @@ export const currencies = [
   },
 ];
 
-export default function SelectTextFields() {
-  const [currency, setCurrency] = React.useState("EUR");
+export default function SelectTextFields({ category, setCategory }) {
+  const [currency, setCurrency] = React.useState("");
 
   const handleChange = (event) => {
     setCurrency(event.target.value);
@@ -48,7 +48,14 @@ export default function SelectTextFields() {
           helperText="Please select your category"
         >
           {currencies.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
+            <MenuItem
+              key={option.value}
+              onClick={() => {
+                setCategory(option.value);
+                console.log(category);
+              }}
+              value={option.value}
+            >
               {option.label}
             </MenuItem>
           ))}
