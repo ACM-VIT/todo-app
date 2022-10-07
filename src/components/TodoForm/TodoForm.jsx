@@ -6,19 +6,28 @@ import { TodoContext } from "../../context/TodoContext/TodoContext";
 
 function TodoForm(props) {
   const { add } = useContext(TodoContext);
+
   const [text, setText] = useState("");
   const [category, setCategory] = useState("");
+  const [placeholder, setPlaceholder] = useState("Enter the todo text");
+
   const handleChange = (event) => {
     setText(event.target.value);
   };
+
   const handleSubmit = (event) => {
-    const newTodo = {
-      id: Math.floor(Math.random() * 100000000),
-      text: text,
-      category: category,
-    };
-    add(newTodo);
+    if (text !== "") {
+      const newTodo = {
+        id: Math.floor(Math.random() * 100000000),
+        text: text,
+        category: category,
+      };
+      add(newTodo);
+    } else {
+      setPlaceholder("Enter the todo Text ");
+    }
   };
+
   return (
     <div>
       <Typography variant="h3" sx={{ m: 3 }}>
@@ -29,20 +38,24 @@ function TodoForm(props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: "50px",
+          marginTop: "20px",
         }}
       >
         <div className="form-div" style={{ width: "500px" }}>
           <div className="form">
             <TextField
               id="outlined-basic"
-              label="Outlined"
+              label={placeholder}
               variant="outlined"
               onChange={handleChange}
-              sx={{ width: "100%" }}
+              sx={{ width: "100%", marginBottom: "20px" }}
             />
             <SelectTextFields category={category} setCategory={setCategory} />
-            <Button variant="contained" onClick={handleSubmit}>
+            <Button
+              variant="contained"
+              sx={{ marginTop: "20px", marginBottom: "20px" }}
+              onClick={handleSubmit}
+            >
               Add
             </Button>
           </div>

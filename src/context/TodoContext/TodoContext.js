@@ -7,12 +7,7 @@ export const ACTIONS = {
 };
 
 const initialState = {
-  todos: [
-    { id: 1, text: "hello", category: "asd" },
-    { id: 2, text: "hello", category: "asd" },
-    { id: 3, text: "hello", category: "asd" },
-    { id: 4, text: "hello", category: "asd" },
-  ],
+  todos: [],
 };
 
 export const TodoContext = createContext(initialState);

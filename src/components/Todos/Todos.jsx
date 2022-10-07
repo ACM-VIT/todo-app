@@ -19,9 +19,6 @@ function Todos(props) {
         <List
           sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
         >
-          {/* {["Walk Dog", "Drink tea"].map((value) => (
-            <Todo value={value} />
-          ))} */}
           {todos.map((todo) => {
             return <Todo todo={todo} key={todo.id} />;
           })}

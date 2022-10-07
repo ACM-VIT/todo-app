@@ -33,7 +33,7 @@ export default function SelectTextFields({ category, setCategory }) {
     <Box
       component="form"
       sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
+        "& .MuiTextField-root": { width: "25ch" },
       }}
       noValidate
       autoComplete="off"
@@ -45,7 +45,7 @@ export default function SelectTextFields({ category, setCategory }) {
           label="Select"
           value={currency}
           onChange={handleChange}
-          helperText="Please select your category"
+          placeholder={"Please select your category"}
         >
           {currencies.map((option) => (
             <MenuItem
