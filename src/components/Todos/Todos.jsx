@@ -2,7 +2,7 @@ import { Typography, List } from "@mui/material";
 import React from "react";
 import { useContext } from "react";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
-import Todo from "./Todo";
+import Todo from "../Todo/Todo";
 
 function Todos(props) {
   const { todos } = useContext(TodoContext);

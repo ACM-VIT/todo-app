@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+<h1 align="center>Kicking Off Hacktoberfest with ACM-VIT!</h1>
+<p align="center">
+<img src="https://github.com/ACM-VIT/.github/raw/master/profile/Forktober2022.png">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 align="center"> Todo React App </h2>
 
-## Available Scripts
+<p align="center"> 
+Todo App is a generally used to maintain our day-to-day tasks or everything important that we lined up for that day, Tasks of higher priority are are at the top of the list, and least important are at the bottom.
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="https://acmvit.in/" target="_blank">
+    <img alt="made-by-acm" src="https://img.shields.io/badge/MADE%20BY-ACM%20VIT-blue?style=for-the-badge" />
+  </a>
+    <!-- Uncomment the below line to add the license badge. Make sure the right license badge is reflected. -->
+    <img alt="license" src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" />
+    <!-- forks/stars/tech stack in the form of badges from https://shields.io/ -->
+</p>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Submitting a Pull Request
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Fork the repository by clicking the fork button on top right corner of the page
+- Clone the target repository. To clone, click on the clone button and copy the https address. Then run
+<pre><code>git clone [HTTPS-ADDRESS]</code></pre>
+- Go to the cloned directory by running
+<pre><code>cd [NAME-OF-REPO]</code></pre>
+- Create a new branch. Use
+<pre><code> git checkout -b [YOUR-BRANCH-NAME]</code></pre>
+- Make your changes to the code. Add changes to your branch by using
+<pre><code>git add .</code></pre>
+- Commit the chanes by executing
+<pre><code>git commit -m "your msg"</code></pre>
+- Push to remote. To do this, run
+<pre><code>git push origin [YOUR-BRANCH-NAME]</code></pre>
+- Create a pull request. Go to the target repository and click on the "Compare & pull request" button. **Make sure your PR description mentions which issues you're solving.**
+  <img src="https://drive.google.com/u/1/uc?id=1f9JKAR-kRvCRGxIs_SAvegaYDPx53T9G&export=download"></img>
+- Wait for your request to be accepted.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Guidelines for Pull Request
 
-### `npm run build`
+<!-- general guidelines here -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Avoid pull requests that :
+  - are automated or scripted
+  - that are plagarized from someone else's branch
+- Do not spam
+- Project maintainer's decision on validity of PR is final.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For additional guidelines, refer to [participation rules](https://hacktoberfest.digitalocean.com/details#rules)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Overview
 
-### `npm run eject`
+Todo List App built in react with Material UI Components, state is managed using the context api.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- How To, Features, Installation etc. as subheadings in this section. example-->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Lets get started!
 
-## Learn More
+```console
+git remote add
+git fetch
+git merge
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Authors
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Authors:**
+[Nakshatra](https://github.com/nakshatraraghav),
+[Harshal](https://github.com/harshalranjhani)

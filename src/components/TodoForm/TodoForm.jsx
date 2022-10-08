@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, TextField, Button } from "@mui/material";
-import SelectTextFields from "./Category";
+import SelectTextFields from "../Category/Category";
 import { useContext, useState } from "react";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
 
