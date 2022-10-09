@@ -59,7 +59,11 @@ export default function Todo({ todo }) {
 					primary={`${todo.text}`}
 					className={todo.complete ? "check" : ""}
 				/>
-				<ListItemText id={labelId} primary={`${todo.category}`} />
+				<ListItemText
+					id={labelId}
+					primary={`${todo.category}`}
+					className={todo.complete ? "check" : ""}
+				/>
 			</ListItemButton>
 		</ListItem>
 	);

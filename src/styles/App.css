@@ -18,5 +18,4 @@
 	background: var(--highlight);
 	color: var(--black);
 	box-shadow: 0.5em 0 0 var(--highlight), -0.5em 0 0 var(--highlight);
-	margin-right: 2rem;
 }
