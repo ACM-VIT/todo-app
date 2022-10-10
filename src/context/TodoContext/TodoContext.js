@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { useLocalStorage } from "../../hooks/useLocalStorage/useLocalStorage";
 import { TodoReducer } from "./TodoReducer";
 
 export const ACTIONS = {
@@ -13,13 +14,22 @@ const initialState = {
 export const TodoContext = createContext(initialState);
 
 export const TodoProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(TodoReducer, initialState);
+  const [todos, setTodos] = useLocalStorage("acm-vit-todos");
+  const [state, dispatch] = useReducer(TodoReducer, initialState, () => {
+    return { ...initialState, todos }
+  });
+
   const addTodo = (todo) => {
     dispatch({ type: ACTIONS.ADD, payload: todo });
   };
   const deleteTodo = (id) => {
     dispatch({ type: ACTIONS.DELETE, payload: id });
   };
+
+  useEffect(() => {
+    setTodos(state.todos)
+  }, [state, setTodos])
+
   return (
     <TodoContext.Provider
       value={{
