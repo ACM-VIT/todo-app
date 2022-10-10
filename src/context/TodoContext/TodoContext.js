@@ -16,7 +16,7 @@ export const TodoContext = createContext(initialState);
 export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useLocalStorage("acm-vit-todos");
   const [state, dispatch] = useReducer(TodoReducer, initialState, () => {
-    return { ...initialState, todos }
+    return { ...initialState, todos: todos && todos.length > 0 ? todos : [] };
   });
 
   const addTodo = (todo) => {
@@ -27,8 +27,8 @@ export const TodoProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setTodos(state.todos)
-  }, [state, setTodos])
+    setTodos(state.todos);
+  }, [state, setTodos]);
 
   return (
     <TodoContext.Provider
