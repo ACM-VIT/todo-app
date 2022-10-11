@@ -81,6 +81,20 @@ export default function SearchAppBar() {
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
             />
+                     <style>
+               .dark-mode {
+               background-color: black;
+                  color: white;
+                      }
+                   </style>
+                 <button onclick="myFunction()">Toggle dark mode</button>
+
+                <script>
+             function myFunction() {
+              var element = document.body;
+              element.classList.toggle("dark-mode");
+                 }
+              </script>
           </Search>
         </Toolbar>
       </AppBar>
