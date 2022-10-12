@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import { TodoContext } from "../../context/TodoContext/TodoContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -52,6 +53,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+  const { updateQuery } = React.useContext(TodoContext);
+  const onChange = (event) => {
+    updateQuery(event.target.value);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ bgcolor: "#272727" }}>
@@ -80,6 +86,7 @@ export default function SearchAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              onChange={onChange}
             />
           </Search>
         </Toolbar>
