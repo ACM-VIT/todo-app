@@ -17,6 +17,8 @@ export const TodoReducer = (state, action) => {
           }
         }),
       };
+    case ACTIONS.UPDATE_QUERY:
+      return { ...state, query: action.payload };
     default:
       return state;
   }

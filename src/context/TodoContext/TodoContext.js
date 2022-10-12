@@ -5,9 +5,11 @@ import { TodoReducer } from "./TodoReducer";
 export const ACTIONS = {
   ADD: "ADD-TODO",
   DELETE: "DELETE-TODO",
+  UPDATE_QUERY: "UPDATE-UQERY",
 };
 
 const initialState = {
+  query: "",
   todos: [],
 };
 
@@ -25,6 +27,11 @@ export const TodoProvider = ({ children }) => {
   const deleteTodo = (id) => {
     dispatch({ type: ACTIONS.DELETE, payload: id });
   };
+  const updateQuery = (value) => {
+    if (!value) value = "";
+    value = String(value).trim();
+    dispatch({ type: ACTIONS.UPDATE_QUERY, payload: value });
+  };
 
   useEffect(() => {
     setTodos(state.todos);
@@ -33,9 +40,11 @@ export const TodoProvider = ({ children }) => {
   return (
     <TodoContext.Provider
       value={{
-        todos: state.todos,
+        // todos: state.todos,
+        ...state,
         add: addTodo,
         del: deleteTodo,
+        updateQuery,
       }}
     >
       {children}

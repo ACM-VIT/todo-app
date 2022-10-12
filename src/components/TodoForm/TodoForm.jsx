@@ -46,6 +46,7 @@ function TodoForm(props) {
             <TextField
               id="outlined-basic"
               label={placeholder}
+              value={text}
               variant="outlined"
               onChange={handleChange}
               sx={{ width: "100%", marginBottom: "20px" }}
