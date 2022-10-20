@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Typography, TextField, Button } from "@mui/material";
 import SelectTextFields from "../Category/Category";
 import { useContext, useState } from "react";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
 
 function TodoForm(props) {
-  const { add } = useContext(TodoContext);
+  const { add, state } = useContext(TodoContext);
+  console.log(state.updatingTodo, state.todos);
+
+  const initialId = task => task ? task.id : Math.floor(Math.random() * 100000000);
 
   const [text, setText] = useState("");
   const [category, setCategory] = useState("");
   const [placeholder, setPlaceholder] = useState("Enter the todo text");
+
+  useEffect(() => {
+    if (state.updatingTodo[0]) {
+      setText(state.updatingTodo[0].text);
+      setCategory(state.updatingTodo[0].category);
+    }
+  }, [state.updatingTodo])
+  
 
   const handleChange = (event) => {
     setText(event.target.value);
@@ -18,7 +29,7 @@ function TodoForm(props) {
   const handleSubmit = (event) => {
     if (text !== "") {
       const newTodo = {
-        id: Math.floor(Math.random() * 100000000),
+        id: initialId(state.updatingTodo[0]),
         text: text,
         category: category,
       };
@@ -31,7 +42,7 @@ function TodoForm(props) {
   return (
     <div>
       <Typography variant="h3" sx={{ m: 3 }}>
-        Add a Todo
+        {state.updatingTodo[0] ? "Update" : "Add"} a Todo
       </Typography>
       <div
         style={{
@@ -48,6 +59,7 @@ function TodoForm(props) {
               label={placeholder}
               variant="outlined"
               onChange={handleChange}
+              value={text}
               sx={{ width: "100%", marginBottom: "20px" }}
             />
             <SelectTextFields category={category} setCategory={setCategory} />

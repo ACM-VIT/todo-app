@@ -5,10 +5,12 @@ import { TodoReducer } from "./TodoReducer";
 export const ACTIONS = {
   ADD: "ADD-TODO",
   DELETE: "DELETE-TODO",
+  UPDATE: "UPDATE-TODO"
 };
 
 const initialState = {
   todos: [],
+  updatingTodo: []
 };
 
 export const TodoContext = createContext(initialState);
@@ -25,6 +27,9 @@ export const TodoProvider = ({ children }) => {
   const deleteTodo = (id) => {
     dispatch({ type: ACTIONS.DELETE, payload: id });
   };
+  const updateTodo = (id) => {
+    dispatch({type: ACTIONS.UPDATE, payload: id});
+  }
 
   useEffect(() => {
     setTodos(state.todos);
@@ -33,9 +38,10 @@ export const TodoProvider = ({ children }) => {
   return (
     <TodoContext.Provider
       value={{
-        todos: state.todos,
+        state,
         add: addTodo,
         del: deleteTodo,
+        upd: updateTodo
       }}
     >
       {children}

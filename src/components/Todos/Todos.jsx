@@ -5,7 +5,7 @@ import { TodoContext } from "../../context/TodoContext/TodoContext";
 import Todo from "../Todo/Todo";
 
 function Todos(props) {
-	const { todos } = useContext(TodoContext);
+	const { state } = useContext(TodoContext);
 	return (
 		<div>
 			<Typography variant="h6">Your Todos</Typography>
@@ -23,7 +23,7 @@ function Todos(props) {
 						bgcolor: "background.paper",
 					}}
 				>
-					{todos.map((todo) => {
+					{state.todos.map((todo) => {
 						return (
 							<Todo todo={todo} key={todo.id} complete={false} />
 						);

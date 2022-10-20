@@ -23,12 +23,6 @@ export const currencies = [
 ];
 
 export default function SelectTextFields({ category, setCategory }) {
-  const [currency, setCurrency] = React.useState("");
-
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
-  };
-
   return (
     <Box
       component="form"
@@ -43,8 +37,7 @@ export default function SelectTextFields({ category, setCategory }) {
           id="outlined-select-currency"
           select
           label="Select"
-          value={currency}
-          onChange={handleChange}
+          value={category}
           placeholder={"Please select your category"}
         >
           {currencies.map((option) => (

@@ -6,6 +6,7 @@ export const TodoReducer = (state, action) => {
       return {
         ...state,
         todos: [action.payload, ...state.todos],
+        updatingTodo: []
       };
     case ACTIONS.DELETE:
       return {
@@ -17,6 +18,21 @@ export const TodoReducer = (state, action) => {
           }
         }),
       };
+    case ACTIONS.UPDATE:
+      return {
+        ...state,
+        // eslint-disable-next-line array-callback-return
+        todos: state.todos.filter((todo) => {
+          if (todo.id !== action.payload) {
+            return todo;
+          }
+        }),
+        updatingTodo: state.todos.filter((todo) => {
+          if (todo.id === action.payload) {
+            return todo;
+          }
+        }),
+      }
     default:
       return state;
   }
