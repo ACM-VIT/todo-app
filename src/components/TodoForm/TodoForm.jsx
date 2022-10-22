@@ -57,6 +57,7 @@ function TodoForm(props) {
             <TextField
               id="outlined-basic"
               label={placeholder}
+              value={text}
               variant="outlined"
               onChange={handleChange}
               value={text}

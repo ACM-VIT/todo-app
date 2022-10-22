@@ -24,9 +24,9 @@ Todo App is a generally used to maintain our day-to-day tasks or everything impo
 
 - Fork the repository by clicking the fork button on top right corner of the page
 - Clone the target repository. To clone, click on the clone button and copy the https address. Then run
-<pre><code>git clone [https://github.com/ACM-VIT/todo-app.git]</code></pre>
+<pre><code>git clone https://github.com/[YOUR-GITHUB-USERNAME]/todo-app.git</code></pre>
 - Go to the cloned directory by running
-<pre><code>cd [Todo React App]</code></pre>
+<pre><code>cd todo-app</code></pre>
 - Create a new branch. Use
 <pre><code> git checkout -b [YOUR-BRANCH-NAME]</code></pre>
 - Make your changes to the code. Add changes to your branch by using

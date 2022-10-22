@@ -6,9 +6,11 @@ export const ACTIONS = {
   ADD: "ADD-TODO",
   DELETE: "DELETE-TODO",
   UPDATE: "UPDATE-TODO"
+
 };
 
 const initialState = {
+  query: "",
   todos: [],
   updatingTodo: []
 };
@@ -27,9 +29,11 @@ export const TodoProvider = ({ children }) => {
   const deleteTodo = (id) => {
     dispatch({ type: ACTIONS.DELETE, payload: id });
   };
+
   const updateTodo = (id) => {
     dispatch({type: ACTIONS.UPDATE, payload: id});
   }
+
 
   useEffect(() => {
     setTodos(state.todos);
