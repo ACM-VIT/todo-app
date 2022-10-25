@@ -9,6 +9,7 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -79,6 +80,7 @@ export default function SearchAppBar() {
           >
             Todo App
           </Typography>
+          <ThemeToggle />
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
