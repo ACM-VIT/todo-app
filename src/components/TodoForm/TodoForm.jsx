@@ -8,7 +8,8 @@ function TodoForm(props) {
   const { add, state } = useContext(TodoContext);
   console.log(state.updatingTodo, state.todos);
 
-  const initialId = task => task ? task.id : Math.floor(Math.random() * 100000000);
+  const initialId = (task) =>
+    task ? task.id : Math.floor(Math.random() * 100000000);
 
   const [text, setText] = useState("");
   const [category, setCategory] = useState("");
@@ -19,8 +20,7 @@ function TodoForm(props) {
       setText(state.updatingTodo[0].text);
       setCategory(state.updatingTodo[0].category);
     }
-  }, [state.updatingTodo])
-  
+  }, [state.updatingTodo]);
 
   const handleChange = (event) => {
     setText(event.target.value);
