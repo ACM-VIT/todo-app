@@ -3,6 +3,14 @@ import { Typography, TextField, Button } from "@mui/material";
 import SelectTextFields from "../Category/Category";
 import { useContext, useState } from "react";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
+import "C:/Users/jakub/IdeaProjects/todo-app/src/styles/App.css";
+//import { ThemeContext } from "@emotion/react";
+import { ThemeContext } from "C:/Users/jakub/IdeaProjects/todo-app/src/App";
+import { ClassNames } from "@emotion/react";
+import { InputLabelClasses } from "@mui/material";
+import { withStyles } from "@mui/material";
+
+
 
 function TodoForm(props) {
   const { add, state } = useContext(TodoContext);
@@ -39,12 +47,19 @@ function TodoForm(props) {
     }
   };
 
+  const { theme }  = useContext(ThemeContext);
+
+  const styles = {
+    labelStyle: {
+      color: "white"
+    }
+  }
   return (
-    <div>
-      <Typography variant="h3" sx={{ m: 3 }}>
+    <div> {JSON.stringify(theme)}
+      <Typography variant="h3" sx={{ m: 3, color: theme }}>
         {state.updatingTodo[0] ? "Update" : "Add"} a Todo
       </Typography>
-      <div
+      <div 
         style={{
           display: "flex",
           alignItems: "center",
@@ -60,10 +75,22 @@ function TodoForm(props) {
               value={text}
               variant="outlined"
               onChange={handleChange}
-              value={text}
+              InputLabelProps={{
+                sx: {
+                  color: theme,
+                }
+              }}
               sx={{ width: "100%", marginBottom: "20px" }}
             />
-            <SelectTextFields category={category} setCategory={setCategory} />
+            <SelectTextFields 
+              category={category} 
+              setCategory={setCategory}
+              InputLabelProps={{
+                sx: {
+                  color: "white",
+                }
+              }}
+            />
             <Button
               variant="contained"
               sx={{ marginTop: "20px", marginBottom: "20px" }}
