@@ -7,7 +7,9 @@ import "C:/Users/jakub/IdeaProjects/todo-app/src/styles/App.css";
 import SelectTextFields from "../Category/Category";
 
 test('should render TodoFrom component', () =>  {
-    render(<TodoForm/>);
+    render(<ThemeContext.Provider value={false}>
+        <TodoForm/>
+        </ThemeContext.Provider>);
     const todoFormElement = screen.getByTestId('todo-1');
     expect(todoFormElement).toBeInTheDocument();
 })

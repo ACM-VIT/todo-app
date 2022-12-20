@@ -9,6 +9,7 @@ import { ThemeContext } from "C:/Users/jakub/IdeaProjects/todo-app/src/App";
 import { ClassNames } from "@emotion/react";
 import { InputLabelClasses } from "@mui/material";
 import { withStyles } from "@mui/material";
+import _ from 'lodash';
 
 
 
@@ -48,7 +49,7 @@ function TodoForm(props) {
   };
 
   const { theme }  = useContext(ThemeContext);
-
+  
   const styles = {
     labelStyle: {
       color: "white"
