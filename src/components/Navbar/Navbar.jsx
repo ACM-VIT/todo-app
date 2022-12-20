@@ -59,7 +59,7 @@ export default function SearchAppBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} data-testid="todo-2">
       <AppBar position="static" sx={{ bgcolor: "#272727" }}>
         <Toolbar>
           <IconButton

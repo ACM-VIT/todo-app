@@ -14,7 +14,7 @@ import { withStyles } from "@mui/material";
 
 function TodoForm(props) {
   const { add, state } = useContext(TodoContext);
-  console.log(state.updatingTodo, state.todos);
+  console.log(state?.updatingTodo, state?.todos);
 
   const initialId = task => task ? task.id : Math.floor(Math.random() * 100000000);
 
@@ -23,11 +23,11 @@ function TodoForm(props) {
   const [placeholder, setPlaceholder] = useState("Enter the todo text");
 
   useEffect(() => {
-    if (state.updatingTodo[0]) {
-      setText(state.updatingTodo[0].text);
-      setCategory(state.updatingTodo[0].category);
+    if (state?.updatingTodo[0]) {
+      setText(state?.updatingTodo[0].text);
+      setCategory(state?.updatingTodo[0].category);
     }
-  }, [state.updatingTodo])
+  }, [state?.updatingTodo])
   
 
   const handleChange = (event) => {
@@ -55,9 +55,10 @@ function TodoForm(props) {
     }
   }
   return (
-    <div> {JSON.stringify(theme)}
-      <Typography variant="h3" sx={{ m: 3, color: theme }}>
-        {state.updatingTodo[0] ? "Update" : "Add"} a Todo
+    <div data-testid="todo-1"> 
+      <Typography variant="h3" sx={{ m: 3, color: theme 
+      }}>
+        {state?.updatingTodo[0] ? "Update" : "Add"} a Todo
       </Typography>
       <div 
         style={{
