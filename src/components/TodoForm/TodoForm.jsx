@@ -3,10 +3,19 @@ import { Typography, TextField, Button } from "@mui/material";
 import SelectTextFields from "../Category/Category";
 import { useContext, useState } from "react";
 import { TodoContext } from "../../context/TodoContext/TodoContext";
+import "C:/Users/jakub/IdeaProjects/todo-app/src/styles/App.css";
+//import { ThemeContext } from "@emotion/react";
+import { ThemeContext } from "C:/Users/jakub/IdeaProjects/todo-app/src/App";
+import { ClassNames } from "@emotion/react";
+import { InputLabelClasses } from "@mui/material";
+import { withStyles } from "@mui/material";
+import _ from 'lodash';
+
+
 
 function TodoForm(props) {
   const { add, state } = useContext(TodoContext);
-  console.log(state.updatingTodo, state.todos);
+  console.log(state?.updatingTodo, state?.todos);
 
   const initialId = task => task ? task.id : Math.floor(Math.random() * 100000000);
 
@@ -15,11 +24,11 @@ function TodoForm(props) {
   const [placeholder, setPlaceholder] = useState("Enter the todo text");
 
   useEffect(() => {
-    if (state.updatingTodo[0]) {
-      setText(state.updatingTodo[0].text);
-      setCategory(state.updatingTodo[0].category);
+    if (state?.updatingTodo[0]) {
+      setText(state?.updatingTodo[0].text);
+      setCategory(state?.updatingTodo[0].category);
     }
-  }, [state.updatingTodo])
+  }, [state?.updatingTodo])
   
 
   const handleChange = (event) => {
@@ -39,12 +48,20 @@ function TodoForm(props) {
     }
   };
 
+  const { theme }  = useContext(ThemeContext);
+  
+  const styles = {
+    labelStyle: {
+      color: "white"
+    }
+  }
   return (
-    <div>
-      <Typography variant="h3" sx={{ m: 3 }}>
-        {state.updatingTodo[0] ? "Update" : "Add"} a Todo
+    <div data-testid="todo-1"> 
+      <Typography variant="h3" sx={{ m: 3, color: theme 
+      }}>
+        {state?.updatingTodo[0] ? "Update" : "Add"} a Todo
       </Typography>
-      <div
+      <div 
         style={{
           display: "flex",
           alignItems: "center",
@@ -60,10 +77,22 @@ function TodoForm(props) {
               value={text}
               variant="outlined"
               onChange={handleChange}
-              value={text}
+              InputLabelProps={{
+                sx: {
+                  color: theme,
+                }
+              }}
               sx={{ width: "100%", marginBottom: "20px" }}
             />
-            <SelectTextFields category={category} setCategory={setCategory} />
+            <SelectTextFields 
+              category={category} 
+              setCategory={setCategory}
+              InputLabelProps={{
+                sx: {
+                  color: "white",
+                }
+              }}
+            />
             <Button
               variant="contained"
               sx={{ marginTop: "20px", marginBottom: "20px" }}

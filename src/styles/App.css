@@ -2,15 +2,28 @@
 
 .App {
 	text-align: center;
+	height: 100vh;
+}
+#black {
+	/*background-color: #f3ebf6;*/
+	background-color: "background.paper"
+}
+
+#white {
+	background-color: #282928;
+
 }
 
 :root {
-	--black: #000f08;
+	
+	--black: #000f08;	
 	--green: #1c3738;
 	--highlight: #adff2f;
+	/*background-color: #f3ebf6;*/
 }
 
 .check {
+	
 	text-decoration: line-through;
 	text-transform: uppercase;
 	display: inline;
@@ -21,3 +34,12 @@
 	opacity: 50%;
 	margin-right: 1em;
 }
+
+.switch {
+	display: flex;
+	width: 100vw;
+	height: 100px;
+	justify-content: center;
+	align-items: center;
+}
+
