@@ -34,6 +34,7 @@ function TodoForm(props) {
         category: category,
       };
       add(newTodo);
+      setText('')
     } else {
       setPlaceholder("Enter the todo Text ");
     }
